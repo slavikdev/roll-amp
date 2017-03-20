@@ -1,10 +1,16 @@
 require 'bundler/setup'
 require 'roll/amp'
 require 'simplecov'
-require 'codecov'
 
-SimpleCov.start
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
+if ENV['CODECOV_TOKEN']
+  require 'codecov'
+  SimpleCov.formatters SimpleCov::Formatter::Codecov
+end
+
+SimpleCov.start do
+  # Don't cover specs themselves.
+  add_filter '/spec/'
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
