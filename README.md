@@ -3,6 +3,8 @@ This gem is intended to contain any helpful API related
 to Accelerated Mobile Pages (AMP). It’s specifically designed
 to work with Rails.
 
+[![Build Status](https://travis-ci.org/roll-rails/roll-amp.svg?branch=master)](https://travis-ci.org/roll-rails/roll-amp)
+
 ## Installation
 
 Add this line to your application's Gemfile:

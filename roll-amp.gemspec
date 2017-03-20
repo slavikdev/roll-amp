@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'APIs to simplify AMP implementation in Rails app'
   spec.description   = 'This gem is intended to contain any helpful API' \
                        'related to Accelerated Mobile Pages (AMP).'
-  spec.homepage      = 'https://github.com/slavikdev/roll-amp'
+  spec.homepage      = 'https://github.com/roll-rails/roll-amp'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
