@@ -8,6 +8,23 @@ to work with Rails.
 [![codecov](https://codecov.io/gh/roll-rails/roll-amp/branch/master/graph/badge.svg)](https://codecov.io/gh/roll-rails/roll-amp)
 [![Code Climate](https://codeclimate.com/github/roll-rails/roll-amp.png)](https://codeclimate.com/github/roll-rails/roll-amp)
 
+## Platforms
+Minimum supported MRI version is `2.1.0`. JRuby is also supported.
+The gem should work on Mac, Linux and Windows, however testing
+is limited as follows:
+* Mac OS X (development machine)
+  * `2.4.0`
+* Windows (via appveyor)
+  * `2.3.0`
+  * `2.2.0`
+  * `2.1.0`
+* Ubuntu (via travis-ci)
+  * `2.4.0`
+  * `2.3.0`
+  * `2.2.0`
+  * `2.1.0`
+  * `jruby`
+
 ## Installation
 
 Add this line to your application's Gemfile:
