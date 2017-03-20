@@ -4,6 +4,7 @@ to Accelerated Mobile Pages (AMP). It’s specifically designed
 to work with Rails.
 
 [![Build Status](https://travis-ci.org/roll-rails/roll-amp.svg?branch=master)](https://travis-ci.org/roll-rails/roll-amp)
+![Build status](https://ci.appveyor.com/api/projects/status/4i4t22ggmecnkg6k?svg=true)](https://ci.appveyor.com/project/slavikdev/roll-amp)
 
 ## Installation
 
