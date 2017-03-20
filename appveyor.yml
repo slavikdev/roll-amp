@@ -7,7 +7,7 @@ environment:
     - RUBY_VERSION: 21
     - RUBY_VERSION: 200
     - RUBY_VERSION: 193
-    
+
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
   - bundle install
