@@ -8,3 +8,5 @@ group :development do
   gem 'reek'
   gem 'rubocop', require: false
 end
+
+gem 'codecov', require: false, group: :test
