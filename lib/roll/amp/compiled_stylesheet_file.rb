@@ -1,4 +1,3 @@
-require 'rails'
 require 'action_view'
 
 module Roll
@@ -6,16 +5,18 @@ module Roll
     # The stylesheet file, compiled into Rails app public directory.
     class CompiledStylesheetFile
       # Initializes new instance of the compiled stylesheet file.
+      #   @param [String] app_path Rails application root path.
       #   @param [String] stylesheet_name stylesheet file name.
-      def initialize(stylesheet_name)
+      def initialize(app_path, stylesheet_name)
+        @app_path = app_path
         @stylesheet_name = stylesheet_name
       end
 
       # Reads content of the file. Returns empty string if file doesn't exist.
       def read
-        file_path = full_path
-        if File.file?(file_path) && File.exist?(file_path)
-          File.read(file_path)
+        full_stylesheet_path = full_path
+        if File.file?(full_stylesheet_path) && File.exist?(full_stylesheet_path)
+          File.read(full_stylesheet_path)
         else
           ''
         end
@@ -29,7 +30,7 @@ module Roll
           @stylesheet_name,
           host: nil
         )
-        "#{Rails.root}/public#{stylesheet_file}"
+        "#{@app_path}/public#{stylesheet_file}"
       end
     end
   end

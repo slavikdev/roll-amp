@@ -1,14 +1,9 @@
 require 'spec_helper'
 
 RSpec.describe Roll::Amp::CompiledStylesheetFile do
-  before(:each) do
-    allow(Rails).to receive(:root).and_return(
-      File.expand_path('../../', __dir__)
-    )
-  end
-
   def create(stylesheet_name)
-    Roll::Amp::CompiledStylesheetFile.new(stylesheet_name)
+    app_root = File.expand_path('../../', __dir__)
+    Roll::Amp::CompiledStylesheetFile.new(app_root, stylesheet_name)
   end
 
   context 'when stylesheet name is nil' do
