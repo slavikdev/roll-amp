@@ -9,7 +9,7 @@ to work with Rails.
 [![Code Climate](https://codeclimate.com/github/roll-rails/roll-amp.png)](https://codeclimate.com/github/roll-rails/roll-amp)
 
 ## Platforms
-Minimum supported MRI version is `1.9.3`. JRuby is also supported.
+Minimum supported MRI version is `2.2.6`. JRuby is not supported.
 The gem should work on Mac, Linux and Windows, however testing
 is limited as follows:
 * Mac OS X (development machine)
@@ -17,18 +17,11 @@ is limited as follows:
 * Windows (via appveyor)
   * `2.3.3`
   * `2.2.6`
-  * `2.1.9`
-  * `2.0.0`
-  * `1.9.3`
 * Ubuntu (via travis-ci)
   * `2.4.0`
   * `2.3.3`
   * `2.2.6`
-  * `2.1.9`
-  * `2.0.0`
-  * `1.9.3`
   * `Head`
-  * `JRuby`
 
 ## Installation
 

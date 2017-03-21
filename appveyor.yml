@@ -4,14 +4,12 @@ environment:
   matrix:
     - RUBY_VERSION: 23
     - RUBY_VERSION: 22
-    - RUBY_VERSION: 21
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
   - ruby -v
   - gem -v
   - bundle -v
-  - gem install nokogiri -v '1.7.1' --no-ri --no-rdoc
   - bundle install
 
 build: off
