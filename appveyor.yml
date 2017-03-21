@@ -10,6 +10,7 @@ environment:
 
 install:
   - set PATH=C:\Ruby%RUBY_VERSION%\bin;%PATH%
+  - gem install nokogiri -v '1.7.1' --no-ri --no-rdoc
   - bundle install
 
 build: off
