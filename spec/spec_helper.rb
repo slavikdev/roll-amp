@@ -2,11 +2,6 @@ require 'bundler/setup'
 require 'roll/amp'
 require 'simplecov'
 
-if ENV['CODECOV_TOKEN']
-  require 'codecov'
-  SimpleCov.formatters SimpleCov::Formatter::Codecov
-end
-
 SimpleCov.start do
   # Don't cover specs themselves.
   add_filter '/spec/'
