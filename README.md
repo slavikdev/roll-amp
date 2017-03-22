@@ -5,7 +5,7 @@ to work with Rails.
 
 [![Travis Build Status](https://travis-ci.org/roll-rails/roll-amp.svg?branch=master)](https://travis-ci.org/roll-rails/roll-amp)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/4i4t22ggmecnkg6k?svg=true)](https://ci.appveyor.com/project/slavikdev/roll-amp)
-[![codecov](https://codecov.io/gh/roll-rails/roll-amp/branch/master/graph/badge.svg)](https://codecov.io/gh/roll-rails/roll-amp)
+[![Test Coverage](https://codeclimate.com/github/roll-rails/roll-amp/badges/coverage.svg)](https://codeclimate.com/github/roll-rails/roll-amp/coverage)
 [![Code Climate](https://codeclimate.com/github/roll-rails/roll-amp.png)](https://codeclimate.com/github/roll-rails/roll-amp)
 
 ## Platforms
