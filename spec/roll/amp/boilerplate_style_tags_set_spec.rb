@@ -9,7 +9,7 @@ RSpec.describe Roll::Amp::Style::BoilerplateStyleTagsSet do
     html = tag.to_html
     expect(html).to have_tag(
       'style[amp-boilerplate]',
-      /^body\{.+?\-amp\-start.+\}/
+      /^body\{.+?\-amp\-start.+\}$/
     )
     expect(html).to have_tag('noscript') do
       with_tag(
