@@ -33,8 +33,10 @@ RSpec.describe Roll::Amp::Style::BoilerplateStyleTag do
 
     it 'renders tag with content' do
       html = tag.to_html
-      expect(html).not_to be_nil
-      expect(html).not_to be_empty
+      expect(html).to have_tag(
+        'style[amp-boilerplate]',
+        /^body\{.+\}/
+      )
     end
   end
 end

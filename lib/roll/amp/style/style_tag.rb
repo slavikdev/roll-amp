@@ -19,7 +19,7 @@ module Roll
         # Prints this tag as HTML.
         # @return [String] HTML-safe string containing the tag's HTML view.
         def to_html
-          content_tag('style', @content, attributes: { @amp_attr => nil })
+          content_tag('style', @content, @amp_attr => '')
         end
       end
     end
