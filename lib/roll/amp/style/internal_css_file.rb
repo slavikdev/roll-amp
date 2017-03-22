@@ -20,7 +20,7 @@ module Roll
 
         def full_path
           File.expand_path(
-            "../css/#{@css_file_name}",
+            "../style/css/#{@css_file_name}",
             File.dirname(__FILE__)
           )
         end
