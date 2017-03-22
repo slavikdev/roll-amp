@@ -58,4 +58,14 @@ RSpec.describe Roll::Amp::Stylesheet do
       expect_css_valid(stylesheet, content)
     end
   end
+
+  context 'when stylesheet is not available anywhere' do
+    let(:stylesheet) { create({}, 'fake.css') }
+
+    it 'reads nothing and returns empty string' do
+      css = stylesheet.read
+      expect(css).not_to be_nil
+      expect(css).to be_empty
+    end
+  end
 end
