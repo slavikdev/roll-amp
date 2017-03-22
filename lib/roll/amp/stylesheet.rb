@@ -5,10 +5,14 @@ module Roll
     # The AMP stylesheet which can be loaded from file or assets pipeline
     # and injected into HTML body.
     class Stylesheet
+      include ActionView::Helpers::OutputSafetyHelper
+
       # Initializes new instance of the AML stylesheet.
+      #   @param [String] app_path Rails application root path.
       #   @param [Array] assets Rails.application.assets collection.
       #   @param [String] stylesheet_name stylesheet file name.
-      def initialize(assets, stylesheet_name)
+      def initialize(app_path, assets, stylesheet_name)
+        @app_path = app_path
         @assets = assets
         @stylesheet_name = stylesheet_name
       end
@@ -40,7 +44,7 @@ module Roll
       end
 
       def read_from_compiled_file
-        CompiledStylesheetFile.new(@stylesheet_name).read
+        CompiledStylesheetFile.new(@app_path, @stylesheet_name).read
       end
     end
   end
