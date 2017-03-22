@@ -35,7 +35,7 @@ RSpec.describe Roll::Amp::Style::BoilerplateStyleTag do
       html = tag.to_html
       expect(html).to have_tag(
         'style[amp-boilerplate]',
-        /^body\{.+\}/
+        /^body\{.+?\-amp\-start.+\}$/
       )
     end
   end
