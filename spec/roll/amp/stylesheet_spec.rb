@@ -1,12 +1,12 @@
 require 'spec_helper'
 require 'action_view'
 
-RSpec.describe Roll::Amp::Stylesheet do
+RSpec.describe Roll::Amp::Style::Stylesheet do
   include ActionView::Helpers::OutputSafetyHelper
 
   def create(assets, stylesheet_name)
     app_root = File.expand_path('../../', File.dirname(__FILE__))
-    Roll::Amp::Stylesheet.new(app_root, assets, stylesheet_name)
+    Roll::Amp::Style::Stylesheet.new(app_root, assets, stylesheet_name)
   end
 
   def expect_css_valid(stylesheet, content)

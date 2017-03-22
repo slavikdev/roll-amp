@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe Roll::Amp::CompiledStylesheetFile do
+RSpec.describe Roll::Amp::Style::CompiledStylesheetFile do
   def create(stylesheet_name)
     app_root = File.expand_path('../../', File.dirname(__FILE__))
-    Roll::Amp::CompiledStylesheetFile.new(app_root, stylesheet_name)
+    Roll::Amp::Style::CompiledStylesheetFile.new(app_root, stylesheet_name)
   end
 
   context 'when stylesheet name is nil' do
