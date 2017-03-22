@@ -6,7 +6,8 @@ to work with Rails.
 [![Travis Build Status](https://travis-ci.org/roll-rails/roll-amp.svg?branch=master)](https://travis-ci.org/roll-rails/roll-amp)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/4i4t22ggmecnkg6k?svg=true)](https://ci.appveyor.com/project/slavikdev/roll-amp)
 [![Test Coverage](https://codeclimate.com/github/roll-rails/roll-amp/badges/coverage.svg)](https://codeclimate.com/github/roll-rails/roll-amp/coverage)
-[![Code Climate](https://codeclimate.com/github/roll-rails/roll-amp.png)](https://codeclimate.com/github/roll-rails/roll-amp)
+[![Code Climate](https://codeclimate.com/github/roll-rails/roll-amp/badges/gpa.svg)](https://codeclimate.com/github/roll-rails/roll-amp)
+[![Issue Count](https://codeclimate.com/github/roll-rails/roll-amp/badges/issue_count.svg)](https://codeclimate.com/github/roll-rails/roll-amp)
 
 ## Platforms
 Minimum supported MRI version is `2.2.6`. JRuby is not supported.
