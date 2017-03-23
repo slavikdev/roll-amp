@@ -1,4 +1,4 @@
-# AMP in Rails app
+# AMP in Rails apps
 Utilities to simplify Accelerated Mobile Pages (AMP) implementation in Rails apps.
 
 [![Travis Build Status](https://travis-ci.org/roll-rails/roll-amp.svg?branch=master)](https://travis-ci.org/roll-rails/roll-amp)
@@ -50,7 +50,9 @@ Or install it yourself as:
     $ gem install roll-amp
 
 ## Usage
+* [How to setup AMP layout for Rails app pages](https://github.com/roll-rails/roll-amp/wiki/How-to-setup-AMP-layout-for-Rails-app-pages)
 
+Layout example:
 ```html
 <!doctype html>
 <html ⚡>
