@@ -3,9 +3,9 @@ require 'roll/amp/autoload'
 require 'action_view'
 
 module Roll
-  # APIs to simplify AMP implementation in Rails apps.
+  # AMP in Rails apps.
   module Amp
-    # APIs related to CSS in AMP.
+    # CSS in AMP.
     module Style
       use :BoilerplateStyleTag,      'style/boilerplate_style_tag'
       use :BoilerplateStyleTagsSet,  'style/boilerplate_style_tags_set'
@@ -16,14 +16,19 @@ module Roll
       use :NoScriptTag,              'style/noscript_tag'
       use :StyleTag,                 'style/style_tag'
       use :Stylesheet,               'style/stylesheet'
+    end
 
-      # Modules with utility functions to use in Rails helpers.
-      module Helpers
-        use :Tags, 'style/helpers/tags'
-      end
+    # JS in AMP.
+    module Script
+      use :AmpJsTag, 'script/amp_js_tag'
+    end
+
+    # Modules with utility functions to use in Rails helpers.
+    module Helpers
+      use :Tags, 'helpers/tags'
     end
   end
 end
 
 # Automatically extend Rails views with AMP tags.
-ActionView::Base.send :include, Roll::Amp::Style::Helpers::Tags
+ActionView::Base.send :include, Roll::Amp::Helpers::Tags

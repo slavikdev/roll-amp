@@ -2,8 +2,8 @@ require 'spec_helper'
 require 'rails'
 require_relative 'fake_rails_app'
 
-RSpec.describe Roll::Amp::Style::Helpers::Tags do
-  include Roll::Amp::Style::Helpers::Tags
+RSpec.describe Roll::Amp::Helpers::Tags do
+  include Roll::Amp::Helpers::Tags
 
   before(:each) do
     allow(Rails).to receive(:root) { @app_root }
@@ -75,6 +75,14 @@ RSpec.describe Roll::Amp::Style::Helpers::Tags do
         html = amp_custom_style('fake.css')
         expect_html(html, '')
       end
+    end
+  end
+
+  context 'amp_js' do
+    it 'renders script tag' do
+      html = amp_js
+      expect(html).to have_tag('script[async]', text: '')
+      expect(html).to have_tag('script[src]', text: '')
     end
   end
 end
