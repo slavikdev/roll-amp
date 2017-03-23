@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Viacheslav Shynkarenko']
   spec.email         = ['shinkarenko.vi@gmail.com']
 
-  spec.summary       = 'APIs to simplify AMP implementation in Rails app'
-  spec.description   = 'This gem is intended to contain any helpful API' \
-                       'related to Accelerated Mobile Pages (AMP).'
+  spec.summary       = 'AMP in Rails apps'
+  spec.description   = 'Utilities to simplify Accelerated Mobile Pages (AMP)'\
+                       'implementation in Rails apps'
   spec.homepage      = 'https://github.com/roll-rails/roll-amp'
   spec.license       = 'MIT'
 

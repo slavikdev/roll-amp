@@ -1,13 +1,22 @@
-# APIs to simplify AMP implementation in Rails app
-This gem is intended to contain any helpful API related
-to Accelerated Mobile Pages (AMP). It’s specifically designed
-to work with Rails.
+# AMP in Rails app
+Utilities to simplify Accelerated Mobile Pages (AMP) implementation in Rails apps.
 
 [![Travis Build Status](https://travis-ci.org/roll-rails/roll-amp.svg?branch=master)](https://travis-ci.org/roll-rails/roll-amp)
 [![Appveyor Build Status](https://ci.appveyor.com/api/projects/status/4i4t22ggmecnkg6k?svg=true)](https://ci.appveyor.com/project/slavikdev/roll-amp)
 [![Test Coverage](https://codeclimate.com/github/roll-rails/roll-amp/badges/coverage.svg)](https://codeclimate.com/github/roll-rails/roll-amp/coverage)
 [![Code Climate](https://codeclimate.com/github/roll-rails/roll-amp/badges/gpa.svg)](https://codeclimate.com/github/roll-rails/roll-amp)
 [![Issue Count](https://codeclimate.com/github/roll-rails/roll-amp/badges/issue_count.svg)](https://codeclimate.com/github/roll-rails/roll-amp)
+
+## Features
+Implemented:
+* Tag to include AMP boilerplate CSS.
+* Tag to include AMP base JS.
+* Tag to include custom CSS.
+
+Todo:
+* Google Analytics integration.
+* AMP validation via Ruby tests.
+* ...
 
 ## Platforms
 Minimum supported MRI version is `2.2.6`. JRuby is not supported.
@@ -42,7 +51,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```html
+<!doctype html>
+<html ⚡>
+  <head>
+    <%= amp_js %>
+    <%= csrf_meta_tags %>
+    <%= amp_boilerplate %>
+    <%= amp_custom_style('amp/application') %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
+```
 
 ## Development
 
