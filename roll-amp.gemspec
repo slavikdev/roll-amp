@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.required_rubygems_version = '>= 1.8.11'
 
   spec.add_dependency 'actionview', '>= 3.2.0', '<= 5.1.0'
+  spec.add_dependency 'railties', '>= 3.2.0', '<= 5.1.0'
 
   spec.add_development_dependency 'bundler', '~> 1.14'
   spec.add_development_dependency 'rake', '~> 10.0'
