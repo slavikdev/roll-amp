@@ -15,4 +15,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
   config.include RSpecHtmlMatchers
+  config.before(:all) do
+    @app_root = File.expand_path('./', File.dirname(__FILE__))
+  end
 end

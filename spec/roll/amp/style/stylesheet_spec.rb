@@ -5,8 +5,7 @@ RSpec.describe Roll::Amp::Style::Stylesheet do
   include ActionView::Helpers::OutputSafetyHelper
 
   def create(assets, stylesheet_name)
-    app_root = File.expand_path('../../', File.dirname(__FILE__))
-    Roll::Amp::Style::Stylesheet.new(app_root, assets, stylesheet_name)
+    Roll::Amp::Style::Stylesheet.new(@app_root, assets, stylesheet_name)
   end
 
   def expect_css_valid(stylesheet, content)
@@ -46,10 +45,7 @@ RSpec.describe Roll::Amp::Style::Stylesheet do
   context 'when stylesheet is not available in pipeline' do
     let(:content) do
       File.read(
-        File.expand_path(
-          '../../public/stylesheets/application.css',
-          File.dirname(__FILE__)
-        )
+        "#{@app_root}/public/stylesheets/application.css"
       )
     end
     let(:stylesheet) { create({}, 'application.css') }

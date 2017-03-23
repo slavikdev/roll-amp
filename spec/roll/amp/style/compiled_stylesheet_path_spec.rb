@@ -2,8 +2,7 @@ require 'spec_helper'
 
 RSpec.describe Roll::Amp::Style::CompiledStylesheetPath do
   def create(stylesheet_name)
-    app_root = File.expand_path('../../', File.dirname(__FILE__))
-    create_with_app_root(app_root, stylesheet_name)
+    create_with_app_root(@app_root, stylesheet_name)
   end
 
   def create_with_app_root(app_root, stylesheet_name)
