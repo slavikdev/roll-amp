@@ -10,7 +10,7 @@ module Roll
 
         # Initializes new instance of the AML stylesheet.
         # @param app_path [String] the Rails application root path.
-        # @param assets [Hash] the Rails.application.assets hash.
+        # @param assets [Sprockets::Environment] the Rails.application.assets
         # @param stylesheet_name [String] the stylesheet file name.
         def initialize(app_path, assets, stylesheet_name)
           @app_path = app_path
@@ -38,7 +38,7 @@ module Roll
         end
 
         def available_in_pipeline?
-          @assets && @assets.key?(@stylesheet_name)
+          @assets && @assets[@stylesheet_name]
         end
 
         def read_from_pipeline
