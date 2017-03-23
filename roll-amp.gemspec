@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'AMP in Rails apps'
   spec.description   = 'Utilities to simplify Accelerated Mobile Pages (AMP)'\
-                       'implementation in Rails apps'
+                       ' implementation in Rails apps'
   spec.homepage      = 'https://github.com/roll-rails/roll-amp'
   spec.license       = 'MIT'
 
