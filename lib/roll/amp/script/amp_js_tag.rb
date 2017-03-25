@@ -3,6 +3,7 @@ module Roll
     module Script
       # The script tag with AMP main JS file.
       class AmpJsTag < ScriptTag
+        # Initializes new instance of the AMP script tag.
         def initialize
           super(AmpJsTag.src)
         end
