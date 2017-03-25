@@ -12,9 +12,9 @@ Implemented:
 * Tag to include AMP boilerplate CSS.
 * Tag to include AMP base JS.
 * Tag to include custom CSS.
+* Google Analytics integration.
 
 Todo:
-* Google Analytics integration.
 * AMP validation via Ruby tests.
 * ...
 
@@ -53,15 +53,79 @@ Or install it yourself as:
 * [Documentation on RubyDoc](http://www.rubydoc.info/gems/roll-amp/)
 * [How to setup AMP layout for Rails app pages](https://github.com/roll-rails/roll-amp/wiki/How-to-setup-AMP-layout-for-Rails-app-pages)
 
-Layout example:
+### Include main JS
+```
+<%= amp_js %>
+```
+Includes `https://cdn.ampproject.org/v0.js` script at a place where the `amp_js`
+tag was specified.
+This tag is required for AMP.
+
+### Include boilerplate CSS
+```
+<%= amp_boilerplate %>
+```
+Includes basic CSS suggested at https://www.ampproject.org/docs/get_started/create/basic_markup
+
+### Include custom CSS
+1. Create CSS (SASS, SCSS) file under `app/stylesheets` of your Rails app.
+For example `app/stylesheets/amp/application.scss`.
+2. Add the following line to your AMP layout:
+```
+<%= amp_custom_style('amp/application') %>
+```
+When `amp/application` is available in the assets pipeline,
+its content will be loaded from there. Otherwise such file will be searched in
+the `public` directory.
+Usually it’s sufficient to create CSS file and Rails will handle the rest.
+*Please note, AMP sets 50K limit on CSS size. If you include larger stylesheet
+your pages won’t be valid.*
+
+### Google Analytics
+1. Insert the following tag *before* `amp_js`:
+```
+<%= amp_analytics_js %>
+```
+2. Add analytics configuration:
+```
+<%=
+  amp_google_analytics(
+    'UA-00000-1',
+    {
+      trackPageview: {
+        on: 'visible',
+        request: 'pageview'
+      }
+    }
+  )
+%>
+```
+First parameter is Google Analytics account ID.
+Second parameter defines triggers. Please see [Adding Analytics to your AMP pages](https://developers.google.com/analytics/devguides/collection/amp-analytics/)
+to learn about triggers. The example above shows the most common configuration.
+
+
+### Layout example
 ```html
 <!doctype html>
 <html ⚡>
   <head>
+    <%= amp_analytics_js %>
     <%= amp_js %>
     <%= csrf_meta_tags %>
     <%= amp_boilerplate %>
     <%= amp_custom_style('amp/application') %>
+    <%=
+      amp_google_analytics(
+        'UA-00000-1',
+        {
+          trackPageview: {
+            on: 'visible',
+            request: 'pageview'
+          }
+        }
+      )
+    %>
   </head>
   <body>
     <%= yield %>
