@@ -25,6 +25,11 @@ module Roll
       use :ScriptTag,              'script/script_tag'
     end
 
+    # HTML in AMP.
+    module Html
+      use :AnalyticsTag, 'html/analytics_tag'
+    end
+
     # Modules with utility functions to use in Rails helpers.
     module Helpers
       use :Tags, 'helpers/tags'
