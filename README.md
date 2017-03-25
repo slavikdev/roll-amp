@@ -50,6 +50,7 @@ Or install it yourself as:
     $ gem install roll-amp
 
 ## Usage
+* [Documentation on RubyDoc](http://www.rubydoc.info/gems/roll-amp/)
 * [How to setup AMP layout for Rails app pages](https://github.com/roll-rails/roll-amp/wiki/How-to-setup-AMP-layout-for-Rails-app-pages)
 
 Layout example:
