@@ -115,6 +115,8 @@ to learn about triggers. The example above shows the most common configuration.
     <%= csrf_meta_tags %>
     <%= amp_boilerplate %>
     <%= amp_custom_style('amp/application') %>
+  </head>
+  <body>
     <%=
       amp_google_analytics(
         'UA-00000-1',
@@ -126,8 +128,6 @@ to learn about triggers. The example above shows the most common configuration.
         }
       )
     %>
-  </head>
-  <body>
     <%= yield %>
   </body>
 </html>
