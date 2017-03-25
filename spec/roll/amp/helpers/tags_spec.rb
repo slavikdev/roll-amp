@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'rails'
+require 'json'
 require_relative 'fake_rails_app'
 
 RSpec.describe Roll::Amp::Helpers::Tags do
@@ -98,6 +99,39 @@ RSpec.describe Roll::Amp::Helpers::Tags do
         'script[custom-element="amp-analytics"]',
         text: ''
       )
+    end
+  end
+
+  context 'amp_google_analytics' do
+    let(:account) { 'UA-00000-1' }
+    let(:triggers) do
+      {
+        trackPageviewWithCustomUrl: {
+          on: 'visible',
+          request: 'pageview',
+          vars: {
+            title: 'My page',
+            documentLocation: 'https://www.examplepetstore.com/pets.html'
+          }
+        }
+      }
+    end
+
+    it 'renders analytics tag' do
+      html = amp_google_analytics(account, triggers)
+      expect(html).to have_tag(
+        "amp-analytics[type=\"#{Roll::Amp::Html::GoogleAnalyticsTag.type}\"]"
+      ) do
+        with_tag(
+          "script[type=\"#{Roll::Amp::Script::JsonScriptTag.type}\"]",
+          text: {
+            vars: {
+              account: account
+            },
+            triggers: triggers
+          }.to_json
+        )
+      end
     end
   end
 end

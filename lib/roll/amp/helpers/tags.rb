@@ -1,4 +1,5 @@
 require 'rails'
+require 'json'
 
 module Roll
   module Amp
@@ -36,8 +37,18 @@ module Roll
           Script::AnalyticsScriptTag.new.to_html
         end
 
+        # Renders tags to connect Google Analytics.
+        # @return [String] HTML containing AMP analytics tag with script tag,
+        # which configures Google Analytics.
         def amp_google_analytics(account, triggers = {})
-          #Html::AnalyticsTag.new('googleanalytics', )
+          Html::GoogleAnalyticsTag.new(
+            Script::JsonScriptTag.new({
+              vars: {
+                account: account
+              },
+              triggers: triggers
+            }.to_json).to_html
+          ).to_html
         end
       end
     end
