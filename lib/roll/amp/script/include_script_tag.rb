@@ -4,10 +4,10 @@ module Roll
   module Amp
     module Script
       # The script tag to include AMP scripts. Note, it's always async.
-      class ScriptTag
+      class IncludeScriptTag
         include ActionView::Helpers::OutputSafetyHelper
 
-        # Initializes new instance of the script tag.
+        # Initializes new instance of the include script tag.
         # @param src [String] the URL to the script.
         # @param custom_element [String] the custom-element attribute value.
         def initialize(src, custom_element = '')

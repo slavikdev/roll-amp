@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Roll::Amp::Script::ScriptTag do
+RSpec.describe Roll::Amp::Script::IncludeScriptTag do
   def expect_required_attributes(html)
     expected = expect(html)
     expected.to have_tag('script[async]', text: '')
@@ -12,7 +12,7 @@ RSpec.describe Roll::Amp::Script::ScriptTag do
   end
 
   def create(src, custom_element = '')
-    Roll::Amp::Script::ScriptTag.new(src, custom_element)
+    Roll::Amp::Script::IncludeScriptTag.new(src, custom_element)
   end
 
   context 'when src is nil' do
