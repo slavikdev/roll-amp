@@ -2,15 +2,15 @@ require 'action_view'
 
 module Roll
   module Amp
-    module Html
-      # The amp-analytics tag.
-      class AnalyticsTag
+    module Script
+      # The script tag for embedded scripts.
+      class ScriptTag
         include ActionView::Helpers::TagHelper
         include ActionView::Helpers::OutputSafetyHelper
 
-        # Initializes new instance of the analytics tag.
-        # @param type [String] the type of AMP analytics.
-        # @param content [String] the content of the tag.
+        # Initializes new instance of the script tag.
+        # @param type [String] the MIME type of the script.
+        # @param content [String] the script's content.
         def initialize(type, content)
           @type = type
           @content = content
@@ -19,7 +19,7 @@ module Roll
         # Prints this tag as HTML.
         # @return [String] HTML-safe string containing the tag's HTML view.
         def to_html
-          content_tag('amp-analytics', raw(@content), type: @type)
+          content_tag('script', raw(@content), type: @type)
         end
       end
     end

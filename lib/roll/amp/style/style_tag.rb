@@ -6,6 +6,7 @@ module Roll
       # The style tag.
       class StyleTag
         include ActionView::Helpers::TagHelper
+        include ActionView::Helpers::OutputSafetyHelper
 
         # Initializes new instance of the style tag.
         # @param amp_attr [String] the AMP-specific attribute of the tag
@@ -19,7 +20,7 @@ module Roll
         # Prints this tag as HTML.
         # @return [String] HTML-safe string containing the tag's HTML view.
         def to_html
-          content_tag('style', @content, @amp_attr => '')
+          content_tag('style', raw(@content), @amp_attr => '')
         end
       end
     end
