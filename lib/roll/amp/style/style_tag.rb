@@ -10,7 +10,7 @@ module Roll
         # Initializes new instance of the style tag.
         # @param amp_attr [String] the AMP-specific attribute of the tag
         # to indicate its purpose.
-        # @param [String] the content of the tag.
+        # @param content [String] the content of the tag.
         def initialize(amp_attr, content)
           @amp_attr = amp_attr
           @content = content

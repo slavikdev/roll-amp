@@ -1,16 +1,15 @@
-require 'action_view'
-
 module Roll
   module Amp
     module Script
-      # The script tag with AMP utilities.
-      class AmpJsTag
-        include ActionView::Helpers::OutputSafetyHelper
+      # The script tag with AMP main JS file.
+      class AmpJsTag < ScriptTag
+        def initialize
+          super(AmpJsTag.src)
+        end
 
-        # Prints this tag as HTML.
-        # @return [String] HTML-safe string containing the tag's HTML view.
-        def to_html
-          raw('<script async src="https://cdn.ampproject.org/v0.js"></script>')
+        # Link to main AMP script which must be always included on AMP pages.
+        def self.src
+          'https://cdn.ampproject.org/v0.js'.freeze
         end
       end
     end

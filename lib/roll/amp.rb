@@ -20,7 +20,8 @@ module Roll
 
     # JS in AMP.
     module Script
-      use :AmpJsTag, 'script/amp_js_tag'
+      use :AmpJsTag,      'script/amp_js_tag'
+      use :ScriptTag,     'script/script_tag'
     end
 
     # Modules with utility functions to use in Rails helpers.
