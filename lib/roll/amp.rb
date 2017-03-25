@@ -24,6 +24,7 @@ module Roll
       use :AmpJsTag,               'script/amp_js_tag'
       use :IncludeScriptTag,       'script/include_script_tag'
       use :ScriptTag,              'script/script_tag'
+      use :JsonScriptTag,          'script/json_script_tag'
     end
 
     # HTML in AMP.

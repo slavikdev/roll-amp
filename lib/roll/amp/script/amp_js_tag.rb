@@ -8,7 +8,8 @@ module Roll
           super(AmpJsTag.src)
         end
 
-        # Link to main AMP script which must be always included on AMP pages.
+        # @return [String] Link to main AMP script which
+        # must be always included on AMP pages.
         def self.src
           'https://cdn.ampproject.org/v0.js'.freeze
         end

@@ -8,7 +8,7 @@ module Roll
           super(AnalyticsScriptTag.src, 'amp-analytics')
         end
 
-        # Link to the script.
+        # @return [String] Link to the script.
         def self.src
           'https://cdn.ampproject.org/v0/amp-analytics-0.1.js'.freeze
         end
