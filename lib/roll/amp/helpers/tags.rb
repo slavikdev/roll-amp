@@ -35,6 +35,10 @@ module Roll
         def amp_analytics_js
           Script::AnalyticsScriptTag.new.to_html
         end
+
+        def amp_google_analytics(account, triggers = {})
+          #Html::AnalyticsTag.new('googleanalytics', )
+        end
       end
     end
   end

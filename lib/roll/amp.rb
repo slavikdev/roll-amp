@@ -29,7 +29,8 @@ module Roll
 
     # HTML in AMP.
     module Html
-      use :AnalyticsTag, 'html/analytics_tag'
+      use :AnalyticsTag,       'html/analytics_tag'
+      use :GoogleAnalyticsTag, 'html/google_analytics_tag'
     end
 
     # Modules with utility functions to use in Rails helpers.
