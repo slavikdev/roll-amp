@@ -86,7 +86,7 @@ your pages won’t be valid.*
 ```
 <%= amp_analytics_js %>
 ```
-2. Add analytics configuration:
+2. Add analytics configuration to the *body*:
 ```
 <%=
   amp_google_analytics(
