@@ -29,6 +29,12 @@ module Roll
         def amp_js
           Script::AmpJsTag.new.to_html
         end
+
+        # Renders script tag with link to AMP analytics JS.
+        # @return [String] HTML containing script tag.
+        def amp_analytics_js
+          Script::AnalyticsScriptTag.new.to_html
+        end
       end
     end
   end

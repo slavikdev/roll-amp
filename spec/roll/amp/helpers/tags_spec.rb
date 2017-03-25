@@ -85,4 +85,19 @@ RSpec.describe Roll::Amp::Helpers::Tags do
       expect(html).to have_tag('script[src]', text: '')
     end
   end
+
+  context 'amp_analytics_js' do
+    it 'renders script tag' do
+      html = amp_analytics_js
+      expect(html).to have_tag('script[async]', text: '')
+      expect(html).to have_tag(
+        "script[src=\"#{Roll::Amp::Script::AnalyticsScriptTag.src}\"]",
+        text: ''
+      )
+      expect(html).to have_tag(
+        'script[custom-element="amp-analytics"]',
+        text: ''
+      )
+    end
+  end
 end
